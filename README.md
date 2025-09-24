@@ -15,7 +15,6 @@ A Python MCP (Model Context Protocol) server for accessing weather data in Konst
 ```
 fogcast_mcp/
 ├── main.py              # Main entry point
-├── setup.py             # Package setup configuration
 ├── requirements.txt     # Python dependencies
 ├── README.md           # This file
 ├── env.example         # Environment configuration template
@@ -60,11 +59,6 @@ fogcast_mcp/
    pip install -r requirements.txt
    ```
 
-   Or install as a package:
-   ```bash
-   pip install -e .
-   ```
-
 ## Configuration
 
 The server uses environment variables for configuration. Create a `.env` file or set the following environment variables:
@@ -98,12 +92,6 @@ LOG_LEVEL=DEBUG
 
 ```bash
 python main.py
-```
-
-Or if installed as a package:
-
-```bash
-fogcast-mcp
 ```
 
 The server will start in MCP stdio mode and communicate via stdin/stdout.
