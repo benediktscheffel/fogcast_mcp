@@ -5,8 +5,8 @@ MCP tools for current weather data access.
 from typing import Dict, Any, List
 import logging
 
-from integration.fogcast_client import FogcastClient
-from models.api_response import APIResponse
+from ..integration.fogcast_client import FogcastClient
+from ..models.api_response import APIResponse
 
 
 logger = logging.getLogger(__name__)

@@ -18,10 +18,10 @@ from mcp.types import (
 )
 from pydantic import BaseModel
 
-from config import config
-from integration.fogcast_client import FogcastClient
-from tools.weather_tools import WeatherTools
-from tools.forecast_tools import ForecastTools
+from .config import config
+from .integration.fogcast_client import FogcastClient
+from .tools.weather_tools import WeatherTools
+from .tools.forecast_tools import ForecastTools
 
 # Logging Setup
 logging.basicConfig(level=getattr(logging, config.log_level.upper()))

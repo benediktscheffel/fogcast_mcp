@@ -62,3 +62,8 @@ htmlcov/
 
 # MCP specific
 *.mcp.log
+
+# Package build
+build/
+dist/
+*.egg-info/

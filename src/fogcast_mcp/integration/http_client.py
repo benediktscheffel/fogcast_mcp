@@ -5,7 +5,7 @@ HTTP client for making API requests using httpx.
 import httpx
 from typing import Dict, Any, Optional
 import logging
-from config import config
+from ..config import config
 
 
 logger = logging.getLogger(__name__)

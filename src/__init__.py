@@ -1,0 +1,3 @@
+"""
+Fogcast MCP Server package.
+"""

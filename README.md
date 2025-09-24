@@ -14,22 +14,31 @@ A Python MCP (Model Context Protocol) server for accessing weather data in Konst
 
 ```
 fogcast_mcp/
-├── app.py                 # Main Flask application
-├── config.py             # Configuration management
-├── requirements.txt      # Python dependencies
-├── README.md            # This file
-├── models/              # Data models and DTOs
+├── main.py              # Main entry point
+├── setup.py             # Package setup configuration
+├── requirements.txt     # Python dependencies
+├── README.md           # This file
+├── env.example         # Environment configuration template
+├── tests/              # Test suite
 │   ├── __init__.py
-│   ├── weather_data.py  # Weather data structures
-│   └── api_response.py  # API response models
-├── integration/         # External API integration
-│   ├── __init__.py
-│   ├── http_client.py   # HTTP client wrapper
-│   └── fogcast_client.py # Fogcast API client
-└── tools/              # MCP tool implementations
-    ├── __init__.py
-    ├── weather_tools.py # Current weather tools
-    └── forecast_tools.py # Forecast tools
+│   └── test_app.py
+└── src/                # Source code package
+    └── fogcast_mcp/    # Main package
+        ├── __init__.py
+        ├── app.py      # MCP server application
+        ├── config.py   # Configuration management
+        ├── models/     # Data models and DTOs
+        │   ├── __init__.py
+        │   ├── weather_data.py
+        │   └── api_response.py
+        ├── integration/ # External API integration
+        │   ├── __init__.py
+        │   ├── http_client.py
+        │   └── fogcast_client.py
+        └── tools/      # MCP tool implementations
+            ├── __init__.py
+            ├── weather_tools.py
+            └── forecast_tools.py
 ```
 
 ## Installation
@@ -49,6 +58,11 @@ fogcast_mcp/
 3. **Install dependencies**:
    ```bash
    pip install -r requirements.txt
+   ```
+
+   Or install as a package:
+   ```bash
+   pip install -e .
    ```
 
 ## Configuration
@@ -83,7 +97,13 @@ LOG_LEVEL=DEBUG
 ### Starting the Server
 
 ```bash
-python app.py
+python main.py
+```
+
+Or if installed as a package:
+
+```bash
+fogcast-mcp
 ```
 
 The server will start in MCP stdio mode and communicate via stdin/stdout.
@@ -215,7 +235,7 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-CMD ["python", "app.py"]
+CMD ["python", "main.py"]
 ```
 
 Build and run:

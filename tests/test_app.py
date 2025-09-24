@@ -4,8 +4,14 @@ Tests for the main Flask application.
 
 import pytest
 import json
+import sys
+import os
 from unittest.mock import patch, MagicMock
-from app import app
+
+# Add src to Python path
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
+
+from fogcast_mcp.app import app
 
 
 @pytest.fixture

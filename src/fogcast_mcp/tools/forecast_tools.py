@@ -6,8 +6,8 @@ from typing import Dict, Any, List, Optional
 import logging
 from datetime import datetime
 
-from integration.fogcast_client import FogcastClient
-from models.api_response import APIResponse
+from ..integration.fogcast_client import FogcastClient
+from ..models.api_response import APIResponse
 
 
 logger = logging.getLogger(__name__)

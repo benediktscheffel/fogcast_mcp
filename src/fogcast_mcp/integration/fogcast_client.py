@@ -7,9 +7,9 @@ from datetime import datetime
 import logging
 
 from .http_client import HTTPClient
-from models.weather_data import ForecastData, CurrentWeatherData
-from models.api_response import APIResponse
-from config import config
+from ..models.weather_data import ForecastData, CurrentWeatherData
+from ..models.api_response import APIResponse
+from ..config import config
 
 
 logger = logging.getLogger(__name__)
